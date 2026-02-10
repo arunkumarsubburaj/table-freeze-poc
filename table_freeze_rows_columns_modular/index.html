@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Table Freeze Rows/Columns POC</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="page-header">
+      <div class="page-header__inner">
+        <strong>Sticky App Bar</strong>
+        <span>Offset demo</span>
+      </div>
+    </header>
+
+    <main class="page">
+      <section class="intro">
+        <h1>Freeze Rows & Columns POC</h1>
+        <p>
+          Scroll down to see table headers and frozen rows/columns in action.
+          Adjust <code>data-col-freeze</code> and <code>data-row-freeze</code> on each table.
+        </p>
+      </section>
+
+      <section class="spacer">
+        <p>Dummy content block — add more text if you want a longer scroll.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+      </section>
+
+      <section class="table-section">
+        <h2>Table A (freeze 2 cols, 2 rows)</h2>
+        <div class="table-content">
+          <table class="freeze-table" data-col-freeze="2" data-row-freeze="2">
+            <thead>
+              <tr>
+                <th>Region</th>
+                <th>Rep</th>
+                <th>Q1</th>
+                <th>Q2</th>
+                <th>Q3</th>
+                <th>Q4</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>North</td><td>Ana</td><td>120</td><td>98</td><td>110</td><td>140</td></tr>
+              <tr><td>North</td><td>Ben</td><td>90</td><td>88</td><td>95</td><td>100</td></tr>
+              <tr><td>South</td><td>Cara</td><td>80</td><td>70</td><td>75</td><td>85</td></tr>
+              <tr><td>South</td><td>Dan</td><td>130</td><td>120</td><td>115</td><td>150</td></tr>
+              <tr><td>East</td><td>Eve</td><td>105</td><td>112</td><td>108</td><td>116</td></tr>
+              <tr><td>West</td><td>Finn</td><td>100</td><td>102</td><td>98</td><td>101</td></tr>
+              <tr><td>West</td><td>Gia</td><td>92</td><td>95</td><td>94</td><td>99</td></tr>
+              <tr><td>Central</td><td>Hugo</td><td>118</td><td>125</td><td>132</td><td>128</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="spacer">
+        <p>Another dummy content block between tables.</p>
+        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+        <p>Vestibulum id ligula porta felis euismod semper. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+        <p>Cras mattis consectetur purus sit amet fermentum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+      </section>
+
+
+      <section class="table-section">
+        <h2>Table B (freeze 3 cols only)</h2>
+        <div class="table-content">
+          <table class="freeze-table" data-col-freeze="3">
+            <thead>
+              <tr>
+                <th>Project</th>
+                <th>Owner</th>
+                <th>Status</th>
+                <th>Start</th>
+                <th>End</th>
+                <th>Budget</th>
+                <th>Risk</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Atlas</td><td>Kim</td><td>On Track</td><td>Jan</td><td>Jun</td><td>$120k</td><td>Low</td></tr>
+              <tr><td>Boreal</td><td>Lee</td><td>At Risk</td><td>Feb</td><td>Aug</td><td>$200k</td><td>Medium</td></tr>
+              <tr><td>Comet</td><td>Mia</td><td>Delayed</td><td>Mar</td><td>Oct</td><td>$310k</td><td>High</td></tr>
+              <tr><td>Delta</td><td>Noah</td><td>On Track</td><td>Apr</td><td>Dec</td><td>$90k</td><td>Low</td></tr>
+              <tr><td>Echo</td><td>Omar</td><td>On Track</td><td>May</td><td>Nov</td><td>$160k</td><td>Low</td></tr>
+              <tr><td>Fjord</td><td>Pia</td><td>At Risk</td><td>Jun</td><td>Jan</td><td>$240k</td><td>Medium</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="spacer">
+        <p>Final content block for scroll testing.</p>
+        <p>Aenean lacinia bibendum nulla sed consectetur. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+        <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas faucibus mollis interdum.</p>
+        <p>Donec sed odio dui. Cras mattis consectetur purus sit amet fermentum.</p>
+        <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+        <p>Vestibulum id ligula porta felis euismod semper.</p>
+      </section>
+
+      
+       <section class="spacer">
+        <p>Another dummy content block between tables.</p>
+        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+        <p>Vestibulum id ligula porta felis euismod semper. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+        <p>Cras mattis consectetur purus sit amet fermentum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+      </section>
+
+
+       <section class="spacer">
+        <p>Another dummy content block between tables.</p>
+        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+        <p>Vestibulum id ligula porta felis euismod semper. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+        <p>Cras mattis consectetur purus sit amet fermentum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+      </section>
+
+
+       <section class="spacer">
+        <p>Another dummy content block between tables.</p>
+        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+        <p>Vestibulum id ligula porta felis euismod semper. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+        <p>Cras mattis consectetur purus sit amet fermentum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+      </section>
+    </main>
+
+    <script type="module">
+      import TableFreezeController from './table-freeze-controller.js';
+      
+      const tableFreeze = new TableFreezeController({
+        offsetSelector: ".page-header",
+      });
+      tableFreeze.init();
+      
+      // Expose for debugging (optional)
+      window.tableFreeze = tableFreeze;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,103 @@
+:root {
+  color-scheme: light;
+  --border-color: #e2e8f0;
+  --boundary-color: #94a3b8;
+  --header-bg: #f8fafc;
+  --cell-bg: #ffffff;
+  --text: #0f172a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text);
+  background: #f1f5f9;
+}
+
+.page-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #0f172a;
+  color: #f8fafc;
+  padding: 12px 20px;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.25);
+}
+
+.page-header__inner {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+}
+
+.page, article {
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.intro {
+  margin-bottom: 32px;
+}
+
+.spacer {
+  margin: 32px 0;
+  padding: 16px 20px;
+  background: #e2e8f0;
+  border-radius: 12px;
+}
+
+.table-section {
+  margin-bottom: 48px;
+}
+
+
+/* Styles for editor360-table */
+.editor360-table[data-row-freeze],
+.editor360-table[data-col-freeze] {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+.editor360-table td,
+.editor360-table th {
+  z-index: 1;
+  border-right: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  background-color: #ffffff;
+}
+
+/* Frozen cell background */
+.editor360-table .freeze-col,
+.editor360-table .freeze-row,
+.editor360-table .freeze-both {
+  background-color: #ffffff !important;
+}
+
+/* Column & Row freeze z-index */
+.editor360-table .freeze-col, .editor360-table .freeze-row {
+  z-index: 10;
+}
+
+/* Cells frozen in both directions have highest z-index */
+.editor360-table .freeze-both {
+  z-index: 11;
+}
+
+/* Boundary and corner visual indicators */
+.editor360-table .freeze-boundary-col {
+  border-right: 2px solid var(--boundary-color);
+}
+
+.editor360-table .freeze-boundary-row {
+  border-bottom: 2px solid var(--boundary-color);
+}
+
+[data-type="table-content"] {
+  width: 100%;
+  overflow-x: auto;
+  position: relative;
+}

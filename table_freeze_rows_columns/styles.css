@@ -1,0 +1,147 @@
+:root {
+  color-scheme: light;
+  --border-color: #e2e8f0;
+  --boundary-color: #94a3b8;
+  --header-bg: #f8fafc;
+  --cell-bg: #ffffff;
+  --text: #0f172a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text);
+  background: #f1f5f9;
+}
+
+.page-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #0f172a;
+  color: #f8fafc;
+  padding: 12px 20px;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.25);
+}
+
+.page-header__inner {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+}
+
+.page {
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.intro {
+  margin-bottom: 32px;
+}
+
+.spacer {
+  margin: 32px 0;
+  padding: 16px 20px;
+  background: #e2e8f0;
+  border-radius: 12px;
+}
+
+.table-section {
+  margin-bottom: 48px;
+}
+
+.table-content {
+  width: 760px;
+  max-width: 100%;
+  overflow: auto;
+  position: relative;
+  padding-bottom: 6px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  background: var(--cell-bg);
+}
+
+.freeze-table {
+  width: max-content;
+  min-width: 1200px;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: var(--cell-bg);
+  border: none;
+}
+
+.freeze-table th,
+.freeze-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+  background: var(--cell-bg);
+  min-width: 110px;
+  white-space: nowrap;
+}
+
+.freeze-table thead th {
+  background: var(--header-bg);
+  font-weight: 600;
+}
+
+.freeze-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.freeze-table tr td:last-child,
+.freeze-table tr th:last-child {
+  border-right: none;
+}
+
+.freeze-table td,
+.freeze-table th {
+  z-index: 1;
+}
+
+.freeze-table .freeze-col {
+  position: sticky;
+  left: 0;
+  z-index: 8;
+  background: var(--cell-bg);
+}
+
+.freeze-table .freeze-row {
+  position: sticky;
+  top: 0;
+  z-index: 4;
+  background: var(--cell-bg);
+}
+
+.freeze-table thead .freeze-row {
+  background: var(--header-bg);
+  z-index: 6;
+}
+
+.freeze-table .freeze-col.freeze-row {
+  z-index: 9;
+  background: var(--cell-bg);
+}
+
+.freeze-table thead .freeze-col.freeze-row {
+  z-index: 10;
+  background: var(--header-bg);
+}
+
+.freeze-table .freeze-corner {
+  z-index: 10;
+  background: var(--header-bg);
+}
+
+.freeze-table .freeze-boundary-col {
+  border-right: 2px solid var(--boundary-color);
+}
+
+.freeze-table .freeze-boundary-row {
+  border-bottom: 2px solid var(--boundary-color);
+}

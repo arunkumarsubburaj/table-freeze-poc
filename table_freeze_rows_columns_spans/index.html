@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Table Freeze with Colspan/Rowspan Support</title>
+  <link rel="stylesheet"
+    href="https://cdn.document360.net/static/editor360-assets/itcss/compiled-css/prod/preview.min.css">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="page-header">
+    <div class="page-header__inner">
+      <strong>Sticky App Bar</strong>
+      <span>Colspan/Rowspan Demo</span>
+    </div>
+  </header>
+
+  <main class="page editor360-published-content">
+    <section class="intro">
+      <h1>Freeze Rows & Columns with Colspan/Rowspan</h1>
+      <p>
+        This version handles <code>colspan</code> and <code>rowspan</code> attributes.
+        Cells that span across frozen boundaries are properly frozen.
+      </p>
+    </section>
+
+    <section class="spacer">
+      <p>Scroll down to see tables with complex cell spanning in action.</p>
+      <p>The freeze logic now considers cells that start before the freeze boundary OR span into it.</p>
+    </section>
+
+    <section class="spacer">
+      <p>Note: The header maintains 2 separate columns (Region, Rep). Body rows with data use the same 2 columns.</p>
+      <p>Summary rows use <code>colspan="2"</code> to merge the first two frozen columns consistently.</p>
+    </section>
+
+    <!-- BASIC EXAMPLES: No Spans -->
+
+    <section class="spacer">
+      <p>Basic column freeze: First 3 columns (Project, Owner, Status) stay fixed during horizontal scroll.</p>
+    </section>
+
+    <section class="spacer">
+      <p>Basic row freeze: Header + first 2 body rows (Jan, Feb) stay fixed during vertical scroll.</p>
+    </section>
+
+    <section class="spacer">
+      <p>Combined freeze: First 2 columns AND header + 2 body rows create a fixed corner.</p>
+    </section>
+
+    <div data-type="table-content">
+      <table width="1572" class="editor360-table" borderstyle="solid" data-row-freeze="4" data-col-freeze="2"
+        style="max-width:1572px;width:1572px;">
+        <colgroup>
+          <col style="width:393px;">
+          <col style="width:393px;">
+          <col style="width:393px;">
+          <col style="width:393px;">
+        </colgroup>
+        <tbody>
+          <tr>
+            <th colspan="1" rowspan="1" colwidth="393">
+              <p data-block-id="mldplm4b-93mjg4-127"></p>
+            </th>
+            <th colspan="1" rowspan="1" colwidth="393">
+              <p data-block-id="mldplzk2-h9u83w-129"></p>
+            </th>
+            <th colspan="1" rowspan="1" colwidth="393">
+              <p data-block-id="mldpodkw-m3h9a8-161"></p>
+            </th>
+            <th colspan="1" rowspan="1" colwidth="393">
+              <p data-block-id="mldpm8zw-a09l1u-130"></p>
+            </th>
+          </tr>
+          <tr>
+            <td colspan="1" rowspan="1" colwidth="393">
+              <p data-block-id="mldpodkw-gxuo0n-162"></p>
+            </td>
+            <td colspan="1" rowspan="1" colwidth="393">
+              <p data-block-id="mldpodkw-ijdnt4-163"></p>
+            </td>
+            <td colspan="1" rowspan="1" colwidth="393">
+              <p data-block-id="mldpodkw-r6v6w3-164"></p>
+            </td>
+            <td colspan="1" rowspan="1" colwidth="393">
+              <p data-block-id="mldpodkx-0rpq99-165"></p>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="1" rowspan="1" colwidth="393">
+              <p data-block-id="mldpodkx-oeu9cv-166"></p>
+            </td>
+            <td colspan="1" rowspan="1" colwidth="393">
+              <p data-block-id="mldpodkx-epe92z-167"></p>
+            </td>
+            <td colspan="1" rowspan="1" colwidth="393">
+              <p data-block-id="mldpodkx-dh1owz-168"></p>
+            </td>
+            <td colspan="1" rowspan="1" colwidth="393">
+              <p data-block-id="mldpodkx-6hpn8d-169"></p>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="1" rowspan="1" colwidth="393">
+              <p data-block-id="mldpmidl-irfxvc-133"></p>
+            </td>
+            <td colspan="1" rowspan="1" colwidth="393">
+              <p data-block-id="mldpodkx-5gl3pm-170"></p>
+            </td>
+            <td colspan="1" rowspan="1" colwidth="393">
+              <p data-block-id="mldpodkx-x9z4pe-171"></p>
+            </td>
+            <td colspan="1" rowspan="1" colwidth="393">
+              <p data-block-id="mldpodky-ott9qa-172"></p>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="1" rowspan="1" colwidth="393">
+              <p data-block-id="mldpmfek-z087qu-132"></p>
+            </td>
+            <td colspan="1" rowspan="1" colwidth="393">
+              <p data-block-id="mldpodky-ahh3nu-173"></p>
+            </td>
+            <td colspan="1" rowspan="1" colwidth="393">
+              <p data-block-id="mldpodky-xwu2nc-174"></p>
+            </td>
+            <td colspan="1" rowspan="1" colwidth="393">
+              <p data-block-id="mldpodky-odgvf2-175"></p>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="1" rowspan="1" colwidth="393">
+              <p data-block-id="mldpmd45-t1haql-131"></p>
+            </td>
+            <td colspan="1" rowspan="1" colwidth="393">
+              <p data-block-id="mldpodky-bn1sgb-176"></p>
+            </td>
+            <td colspan="1" rowspan="1" colwidth="393">
+              <div data-type="table-content">
+                <table width="354" class="editor360-table" borderstyle="solid" style="max-width:354px;width:354px;">
+                  <colgroup>
+                    <col style="width:118px;">
+                    <col style="width:118px;">
+                    <col style="width:118px;">
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <th colspan="1" rowspan="1" colwidth="118">
+                        <p data-block-id="mldpn63h-eef8et-135"></p>
+                      </th>
+                      <th colspan="1" rowspan="1" colwidth="118">
+                        <p data-block-id="mldpodkz-1fsg85-177"></p>
+                      </th>
+                      <th colspan="1" rowspan="1" colwidth="118">
+                        <p data-block-id="mldpodkz-i77rdo-178"></p>
+                      </th>
+                    </tr>
+                    <tr>
+                      <td colspan="1" rowspan="1" colwidth="118">
+                        <p data-block-id="mldpodkz-2wt04n-179"></p>
+                      </td>
+                      <td colspan="1" rowspan="1" colwidth="118">
+                        <p data-block-id="mldpodkz-933lnm-180"></p>
+                      </td>
+                      <td colspan="1" rowspan="1" colwidth="118">
+                        <p data-block-id="mldpodkz-y9yyvh-181"></p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="1" rowspan="1" colwidth="118">
+                        <p data-block-id="mldpodkz-vu4uix-182"></p>
+                      </td>
+                      <td colspan="1" rowspan="1" colwidth="118">
+                        <p data-block-id="mldpodkz-ddoqen-183"></p>
+                      </td>
+                      <td colspan="1" rowspan="1" colwidth="118">
+                        <p data-block-id="mldpodkz-8efg49-184"></p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </td>
+            <td colspan="1" rowspan="1" colwidth="393">
+              <p data-block-id="mldpodl0-zgkk9y-185"></p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+    <!-- COLSPAN EXAMPLES -->
+
+
+    <section class="spacer">
+      <p>Final edge case: Cells that touch freeze boundaries from multiple directions.</p>
+      <p>Scroll both horizontally and vertically to see all freeze behaviors in action!</p>
+    </section>
+    <section class="spacer">
+      <p>Final edge case: Cells that touch freeze boundaries from multiple directions.</p>
+      <p>Scroll both horizontally and vertically to see all freeze behaviors in action!</p>
+    </section>
+    <section class="spacer">
+      <p>Final edge case: Cells that touch freeze boundaries from multiple directions.</p>
+      <p>Scroll both horizontally and vertically to see all freeze behaviors in action!</p>
+    </section>
+    <section class="spacer">
+      <p>Final edge case: Cells that touch freeze boundaries from multiple directions.</p>
+      <p>Scroll both horizontally and vertically to see all freeze behaviors in action!</p>
+    </section>
+    <section class="spacer">
+      <p>Final edge case: Cells that touch freeze boundaries from multiple directions.</p>
+      <p>Scroll both horizontally and vertically to see all freeze behaviors in action!</p>
+    </section>
+    <section class="spacer">
+      <p>Final edge case: Cells that touch freeze boundaries from multiple directions.</p>
+      <p>Scroll both horizontally and vertically to see all freeze behaviors in action!</p>
+    </section>
+    <section class="spacer">
+      <p>Final edge case: Cells that touch freeze boundaries from multiple directions.</p>
+      <p>Scroll both horizontally and vertically to see all freeze behaviors in action!</p>
+    </section>
+    <section class="spacer">
+      <p>Final edge case: Cells that touch freeze boundaries from multiple directions.</p>
+      <p>Scroll both horizontally and vertically to see all freeze behaviors in action!</p>
+    </section>
+    <section class="spacer">
+      <p>Final edge case: Cells that touch freeze boundaries from multiple directions.</p>
+      <p>Scroll both horizontally and vertically to see all freeze behaviors in action!</p>
+    </section>
+    <section class="accordion">
+      <h2>Accordion Section: More Edge Cases</h2>
+      <div class="details-wrapper details-wrapper_rendered" data-type="details-wrapper">
+        <details data-opened="true" data-button-align="right" data-details-border="withBorder" data-expand-icon="arrow"
+          data-lock="false">
+          <summary>
+            <p data-block-id="mldpljlg-ajrds6-124"></p>
+          </summary>
+          <div data-type="details-content">
+            <div data-type="table-content">
+              <table width="1572" class="editor360-table" borderstyle="solid" data-row-freeze="4" data-col-freeze="2"
+                style="max-width:1572px;width:1572px;">
+                <colgroup>
+                  <col style="width:393px;">
+                  <col style="width:393px;">
+                  <col style="width:393px;">
+                  <col style="width:393px;">
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <th colspan="1" rowspan="1" colwidth="393">
+                      <p data-block-id="mldplm4b-93mjg4-127"></p>
+                    </th>
+                    <th colspan="1" rowspan="1" colwidth="393">
+                      <p data-block-id="mldplzk2-h9u83w-129"></p>
+                    </th>
+                    <th colspan="1" rowspan="1" colwidth="393">
+                      <p data-block-id="mldpodkw-m3h9a8-161"></p>
+                    </th>
+                    <th colspan="1" rowspan="1" colwidth="393">
+                      <p data-block-id="mldpm8zw-a09l1u-130"></p>
+                    </th>
+                  </tr>
+                  <tr>
+                    <td colspan="1" rowspan="1" colwidth="393">
+                      <p data-block-id="mldpodkw-gxuo0n-162"></p>
+                    </td>
+                    <td colspan="1" rowspan="1" colwidth="393">
+                      <p data-block-id="mldpodkw-ijdnt4-163"></p>
+                    </td>
+                    <td colspan="1" rowspan="1" colwidth="393">
+                      <p data-block-id="mldpodkw-r6v6w3-164"></p>
+                    </td>
+                    <td colspan="1" rowspan="1" colwidth="393">
+                      <p data-block-id="mldpodkx-0rpq99-165"></p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="1" rowspan="1" colwidth="393">
+                      <p data-block-id="mldpodkx-oeu9cv-166"></p>
+                    </td>
+                    <td colspan="1" rowspan="1" colwidth="393">
+                      <p data-block-id="mldpodkx-epe92z-167"></p>
+                    </td>
+                    <td colspan="1" rowspan="1" colwidth="393">
+                      <p data-block-id="mldpodkx-dh1owz-168"></p>
+                    </td>
+                    <td colspan="1" rowspan="1" colwidth="393">
+                      <p data-block-id="mldpodkx-6hpn8d-169"></p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="1" rowspan="1" colwidth="393">
+                      <p data-block-id="mldpmidl-irfxvc-133"></p>
+                    </td>
+                    <td colspan="1" rowspan="1" colwidth="393">
+                      <p data-block-id="mldpodkx-5gl3pm-170"></p>
+                    </td>
+                    <td colspan="1" rowspan="1" colwidth="393">
+                      <p data-block-id="mldpodkx-x9z4pe-171"></p>
+                    </td>
+                    <td colspan="1" rowspan="1" colwidth="393">
+                      <p data-block-id="mldpodky-ott9qa-172"></p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="1" rowspan="1" colwidth="393">
+                      <p data-block-id="mldpmfek-z087qu-132"></p>
+                    </td>
+                    <td colspan="1" rowspan="1" colwidth="393">
+                      <p data-block-id="mldpodky-ahh3nu-173"></p>
+                    </td>
+                    <td colspan="1" rowspan="1" colwidth="393">
+                      <p data-block-id="mldpodky-xwu2nc-174"></p>
+                    </td>
+                    <td colspan="1" rowspan="1" colwidth="393">
+                      <p data-block-id="mldpodky-odgvf2-175"></p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="1" rowspan="1" colwidth="393">
+                      <p data-block-id="mldpmd45-t1haql-131"></p>
+                    </td>
+                    <td colspan="1" rowspan="1" colwidth="393">
+                      <p data-block-id="mldpodky-bn1sgb-176"></p>
+                    </td>
+                    <td colspan="1" rowspan="1" colwidth="393">
+                      <div data-type="table-content">
+                        <table width="354" class="editor360-table" borderstyle="solid"
+                          style="max-width:354px;width:354px;">
+                          <colgroup>
+                            <col style="width:118px;">
+                            <col style="width:118px;">
+                            <col style="width:118px;">
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th colspan="1" rowspan="1" colwidth="118">
+                                <p data-block-id="mldpn63h-eef8et-135"></p>
+                              </th>
+                              <th colspan="1" rowspan="1" colwidth="118">
+                                <p data-block-id="mldpodkz-1fsg85-177"></p>
+                              </th>
+                              <th colspan="1" rowspan="1" colwidth="118">
+                                <p data-block-id="mldpodkz-i77rdo-178"></p>
+                              </th>
+                            </tr>
+                            <tr>
+                              <td colspan="1" rowspan="1" colwidth="118">
+                                <p data-block-id="mldpodkz-2wt04n-179"></p>
+                              </td>
+                              <td colspan="1" rowspan="1" colwidth="118">
+                                <p data-block-id="mldpodkz-933lnm-180"></p>
+                              </td>
+                              <td colspan="1" rowspan="1" colwidth="118">
+                                <p data-block-id="mldpodkz-y9yyvh-181"></p>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td colspan="1" rowspan="1" colwidth="118">
+                                <p data-block-id="mldpodkz-vu4uix-182"></p>
+                              </td>
+                              <td colspan="1" rowspan="1" colwidth="118">
+                                <p data-block-id="mldpodkz-ddoqen-183"></p>
+                              </td>
+                              <td colspan="1" rowspan="1" colwidth="118">
+                                <p data-block-id="mldpodkz-8efg49-184"></p>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </td>
+                    <td colspan="1" rowspan="1" colwidth="393">
+                      <p data-block-id="mldpodl0-zgkk9y-185"></p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </details><button class="details-arrow" type="details"></button>
+      </div>
+
+      <p data-block-id="mldpljlg-o5m30n-126"></p>
+    </section>
+    <section class="spacer">
+      <p>Final edge case: Cells that touch freeze boundaries from multiple directions.</p>
+      <p>Scroll both horizontally and vertically to see all freeze behaviors in action!</p>
+    </section>
+    <section class="spacer">
+      <p>Final edge case: Cells that touch freeze boundaries from multiple directions.</p>
+      <p>Scroll both horizontally and vertically to see all freeze behaviors in action!</p>
+    </section>
+    <section class="spacer">
+      <p>Final edge case: Cells that touch freeze boundaries from multiple directions.</p>
+      <p>Scroll both horizontally and vertically to see all freeze behaviors in action!</p>
+    </section>
+    <section class="spacer">
+      <p>Final edge case: Cells that touch freeze boundaries from multiple directions.</p>
+      <p>Scroll both horizontally and vertically to see all freeze behaviors in action!</p>
+    </section>
+    <section class="spacer">
+      <p>Final edge case: Cells that touch freeze boundaries from multiple directions.</p>
+      <p>Scroll both horizontally and vertically to see all freeze behaviors in action!</p>
+    </section>
+    <section class="spacer">
+      <p>Final edge case: Cells that touch freeze boundaries from multiple directions.</p>
+      <p>Scroll both horizontally and vertically to see all freeze behaviors in action!</p>
+    </section>
+    <section class="spacer">
+      <p>Final edge case: Cells that touch freeze boundaries from multiple directions.</p>
+      <p>Scroll both horizontally and vertically to see all freeze behaviors in action!</p>
+    </section>
+    <section class="spacer">
+      <p>Final edge case: Cells that touch freeze boundaries from multiple directions.</p>
+      <p>Scroll both horizontally and vertically to see all freeze behaviors in action!</p>
+    </section>
+    <section class="spacer">
+      <p>Final edge case: Cells that touch freeze boundaries from multiple directions.</p>
+      <p>Scroll both horizontally and vertically to see all freeze behaviors in action!</p>
+    </section>
+    <section class="spacer">
+      <p>Final edge case: Cells that touch freeze boundaries from multiple directions.</p>
+      <p>Scroll both horizontally and vertically to see all freeze behaviors in action!</p>
+    </section>
+    <section class="spacer">
+      <p>Final edge case: Cells that touch freeze boundaries from multiple directions.</p>
+      <p>Scroll both horizontally and vertically to see all freeze behaviors in action!</p>
+    </section>
+    <section class="spacer">
+      <p>Final edge case: Cells that touch freeze boundaries from multiple directions.</p>
+      <p>Scroll both horizontally and vertically to see all freeze behaviors in action!</p>
+    </section>
+    <section class="spacer">
+      <p>Final edge case: Cells that touch freeze boundaries from multiple directions.</p>
+      <p>Scroll both horizontally and vertically to see all freeze behaviors in action!</p>
+    </section>
+    <section class="spacer">
+      <p>Final edge case: Cells that touch freeze boundaries from multiple directions.</p>
+      <p>Scroll both horizontally and vertically to see all freeze behaviors in action!</p>
+    </section>
+    <section class="spacer">
+      <p>Final edge case: Cells that touch freeze boundaries from multiple directions.</p>
+      <p>Scroll both horizontally and vertically to see all freeze behaviors in action!</p>
+    </section>
+    <section class="spacer">
+      <p>Final edge case: Cells that touch freeze boundaries from multiple directions.</p>
+      <p>Scroll both horizontally and vertically to see all freeze behaviors in action!</p>
+    </section>
+    <section class="spacer">
+      <p>Final edge case: Cells that touch freeze boundaries from multiple directions.</p>
+      <p>Scroll both horizontally and vertically to see all freeze behaviors in action!</p>
+    </section>
+    <section class="spacer">
+      <p>Final edge case: Cells that touch freeze boundaries from multiple directions.</p>
+      <p>Scroll both horizontally and vertically to see all freeze behaviors in action!</p>
+    </section>
+    <section class="spacer">
+      <p>Final edge case: Cells that touch freeze boundaries from multiple directions.</p>
+      <p>Scroll both horizontally and vertically to see all freeze behaviors in action!</p>
+    </section>
+    <section class="spacer">
+      <p>Final edge case: Cells that touch freeze boundaries from multiple directions.</p>
+      <p>Scroll both horizontally and vertically to see all freeze behaviors in action!</p>
+    </section>
+    <section class="spacer">
+      <p>Final edge case: Cells that touch freeze boundaries from multiple directions.</p>
+      <p>Scroll both horizontally and vertically to see all freeze behaviors in action!</p>
+    </section>
+    <section class="spacer">
+      <p>Final edge case: Cells that touch freeze boundaries from multiple directions.</p>
+      <p>Scroll both horizontally and vertically to see all freeze behaviors in action!</p>
+    </section>
+    <section class="spacer">
+      <p>Final edge case: Cells that touch freeze boundaries from multiple directions.</p>
+      <p>Scroll both horizontally and vertically to see all freeze behaviors in action!</p>
+    </section>
+  </main>
+
+  <script type="module">
+    import TableFreezeController from './table-freeze-controller.js';
+
+    const tableFreeze = new TableFreezeController({
+      offsetSelector: ".page-header",
+    });
+    tableFreeze.init();
+
+    // Expose for debugging
+    window.tableFreeze = tableFreeze;
+  </script>
+</body>
+
+</html>
+window.tableFreeze = tableFreeze;
+</script>
+</body>
+
+</html>
