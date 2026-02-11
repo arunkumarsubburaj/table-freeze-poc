@@ -91,14 +91,7 @@ body {
 .editor360-table[data-col-freeze] > thead > tr:first-child > * {
   border-top-width: 1px !important;
 }
-/* Frozen cell background */
-.editor360-table .freeze-col,
-.editor360-table .freeze-row,
-.editor360-table .freeze-both {
-  background-color: #ffffff !important;
-}
-
-/* Column & Row freeze z-index */
+/* Frozen cell z-index */
 .editor360-table .freeze-col, .editor360-table .freeze-row {
   z-index: 10;
 }
@@ -106,6 +99,13 @@ body {
 /* Cells frozen in both directions have highest z-index */
 .editor360-table .freeze-both {
   z-index: 11;
+}
+
+/* Background color for frozen TD cells (only when table has the CSS variable set) */
+.editor360-table td.freeze-col, 
+.editor360-table td.freeze-row, 
+.editor360-table td.freeze-both {
+  background-color: var(--freeze-bg-color, #ffffff);
 }
 
 /* Boundary and corner visual indicators */

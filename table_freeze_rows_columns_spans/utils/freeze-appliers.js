@@ -13,6 +13,23 @@ import {
 } from './span-helpers.js';
 
 /**
+ * Get the first non-transparent background color from element or its ancestors
+ * @param {HTMLElement} element - Starting element
+ * @returns {string|null} - Background color or null if all transparent
+ */
+function getOpaqueBackgroundColor(element) {
+  let current = element;
+  while (current && current !== document.documentElement) {
+    const bg = window.getComputedStyle(current).backgroundColor;
+    if (bg && bg !== 'rgba(0, 0, 0, 0)' && bg !== 'transparent') {
+      return bg;
+    }
+    current = current.parentElement;
+  }
+  return null; // No opaque background found
+}
+
+/**
  * Apply column freeze styles with colspan support
  * @param {HTMLTableElement} table - Table element
  * @param {number} colFreeze - Number of columns to freeze
@@ -45,12 +62,18 @@ export function applyColumnFreeze(table, colFreeze) {
     const frozenCells = getCellsForColumnFreeze(matrixData, actualColFreeze);
     const boundaryCol = getColumnBoundaryIndex(matrixData, actualColFreeze);
 
+    // Get first non-transparent background color from table or ancestors
+    const bgColor = getOpaqueBackgroundColor(table);
+    if (bgColor) {
+      table.style.setProperty('--freeze-bg-color', bgColor);
+    }
+
     // Apply freeze styles to cells (inline)
     frozenCells.forEach((cell) => {
       const info = matrixData.cellInfo.get(cell);
       if (!info) return;
       
-      // Apply sticky positioning inline (z-index and background-color handled by CSS)
+      // Apply sticky positioning inline (z-index handled by CSS)
       cell.style.position = "sticky";
       cell.style.left = `${leftOffsets[info.col] || 0}px`;
       
@@ -100,6 +123,12 @@ export function applyRowFreeze(table, rowFreeze, colFreeze = 0) {
     const frozenCells = getCellsForRowFreeze(table, matrixData, rowFreeze);
     const boundaryRow = getRowBoundaryIndex(table, matrixData, rowFreeze);
 
+    // Get first non-transparent background color from table or ancestors
+    const bgColor = getOpaqueBackgroundColor(table);
+    if (bgColor) {
+      table.style.setProperty('--freeze-bg-color', bgColor);
+    }
+
     // Get column widths to calculate left positions for corner cells only
     const widths = measureColumnWidths(table);
     const leftOffsets = [];
@@ -120,7 +149,7 @@ export function applyRowFreeze(table, rowFreeze, colFreeze = 0) {
         if (frozenCells.has(cell)) {
           const info = matrixData.cellInfo.get(cell);
           
-          // Apply sticky positioning inline (z-index and background-color handled by CSS)
+          // Apply sticky positioning inline (z-index handled by CSS)
           cell.style.position = "sticky";
           cell.style.top = `${topAcc}px`;
           

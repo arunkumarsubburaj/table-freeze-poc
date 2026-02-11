@@ -93,11 +93,14 @@ export function clearFreezeStyles(table) {
           "freeze-boundary-col",
           "freeze-boundary-row"
         );
-        // Only clear inline styles (z-index and background-color are in CSS)
+        // Clear inline styles related to freezing
         cell.style.position = "";
         cell.style.left = "";
         cell.style.top = "";
       });
+    
+    // Remove CSS variable from table
+    table.style.removeProperty('--freeze-bg-color');
   } catch (error) {
     console.error("DOM Helper: Error clearing freeze styles", error);
   }
