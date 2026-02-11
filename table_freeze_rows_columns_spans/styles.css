@@ -62,14 +62,24 @@ body {
   border-collapse: separate;
   border-spacing: 0;
 }
-.editor360-table td,
-.editor360-table th {
-  z-index: 1;
-  border-right: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
-  background-color: #ffffff;
+.editor360-table[data-row-freeze] td,
+.editor360-table[data-col-freeze] td,
+.editor360-table[data-row-freeze] th,
+.editor360-table[data-col-freeze] th {
+  border-top-width: 0 !important;
+  border-left-width: 0 !important;
 }
 
+/* table outer edges */
+.editor360-table[data-row-freeze] tr > *:first-child,
+.editor360-table[data-col-freeze] tr > *:first-child {
+  border-left-width: 1px !important;
+}
+
+.editor360-table[data-row-freeze] tr:first-child > *,
+.editor360-table[data-col-freeze] tr:first-child > * {
+  border-top-width: 1px !important;
+}
 /* Frozen cell background */
 .editor360-table .freeze-col,
 .editor360-table .freeze-row,
