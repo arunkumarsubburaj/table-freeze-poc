@@ -266,8 +266,18 @@ export default class TableFreezeController {
       const colFreeze = getFreezeCount(table, "data-col-freeze");
       const rowFreeze = getFreezeCount(table, "data-row-freeze");
 
-      table.dataset.colFreeze = colFreeze;
-      table.dataset.rowFreeze = rowFreeze;
+      // Only set attributes if freeze values are greater than 0
+      if (colFreeze > 0) {
+        table.dataset.colFreeze = colFreeze;
+      } else {
+        delete table.dataset.colFreeze;
+      }
+      
+      if (rowFreeze > 0) {
+        table.dataset.rowFreeze = rowFreeze;
+      } else {
+        delete table.dataset.rowFreeze;
+      }
 
       applyRowFreeze(table, rowFreeze, colFreeze);
       applyColumnFreeze(table, colFreeze);

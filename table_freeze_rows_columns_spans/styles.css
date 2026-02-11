@@ -57,27 +57,38 @@ body {
 
 
 /* Styles for editor360-table */
+.editor360-table {
+  border-collapse: collapse;
+}
 .editor360-table[data-row-freeze],
 .editor360-table[data-col-freeze] {
-  border-collapse: separate;
-  border-spacing: 0;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
 }
-.editor360-table[data-row-freeze] td,
-.editor360-table[data-col-freeze] td,
-.editor360-table[data-row-freeze] th,
-.editor360-table[data-col-freeze] th {
+.editor360-table[data-row-freeze] > tbody > tr > td,
+.editor360-table[data-col-freeze] > tbody > tr > td,
+.editor360-table[data-row-freeze] > tbody > tr > th,
+.editor360-table[data-col-freeze] > tbody > tr > th,
+.editor360-table[data-row-freeze] > thead > tr > td,
+.editor360-table[data-col-freeze] > thead > tr > td,
+.editor360-table[data-row-freeze] > thead > tr > th,
+.editor360-table[data-col-freeze] > thead > tr > th {
   border-top-width: 0 !important;
   border-left-width: 0 !important;
 }
 
 /* table outer edges */
-.editor360-table[data-row-freeze] tr > *:first-child,
-.editor360-table[data-col-freeze] tr > *:first-child {
+.editor360-table[data-row-freeze] > tbody > tr > *:first-child,
+.editor360-table[data-col-freeze] > tbody > tr > *:first-child,
+.editor360-table[data-row-freeze] > thead > tr > *:first-child,
+.editor360-table[data-col-freeze] > thead > tr > *:first-child {
   border-left-width: 1px !important;
 }
 
-.editor360-table[data-row-freeze] tr:first-child > *,
-.editor360-table[data-col-freeze] tr:first-child > * {
+.editor360-table[data-row-freeze] > tbody > tr:first-child > *,
+.editor360-table[data-col-freeze] > tbody > tr:first-child > *,
+.editor360-table[data-row-freeze] > thead > tr:first-child > *,
+.editor360-table[data-col-freeze] > thead > tr:first-child > * {
   border-top-width: 1px !important;
 }
 /* Frozen cell background */
